@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navbarText:"#454755",
-        navbarTextHover:"#fb6a9b"
+        black:"#454755",
+        pink:"#fb6a9b"
       }
     },
   },

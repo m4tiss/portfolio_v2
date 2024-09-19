@@ -20,9 +20,9 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center flex-grow gap-10 flex-col xl:flex-row ">
+    <div className="flex justify-center items-center flex-grow gap-10 flex-col xl:flex-row">
       <motion.div
-        className="text-navbarText w-full xl:w-1/2 flex flex-col text-left justify-center items-center gap-2"
+        className="text-black w-full xl:w-1/2 flex flex-col text-left justify-center items-center gap-2"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -36,13 +36,13 @@ const Home = () => {
 
         <motion.div className="w-full flex flex-col text-left gap-10">
           <motion.h2
-            className="w-full text-navbarTextHover font-extrabold tracking-tighter text-3xl xl:text-8xl"
+            className="w-full text-pink font-extrabold tracking-tighter text-3xl xl:text-8xl"
             variants={childVariants}
           >
             MATEUSZ
           </motion.h2>
           <motion.h2
-            className="w-full text-navbarTextHover font-extrabold tracking-tighter text-3xl xl:text-8xl"
+            className="w-full text-pink font-extrabold tracking-tighter text-3xl xl:text-8xl"
             variants={childVariants}
           >
             GWÓŹDŹ
