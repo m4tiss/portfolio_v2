@@ -25,7 +25,7 @@ const ProjectPanel = ({
         damping: 8,
         duration: 0.5,
       }}
-      className={`flex justify-center gap-10 ${photoSide === "left" ? "" : "flex-row-reverse"}`}
+      className={`flex justify-center items-center gap-10 ${photoSide === "left" ? "" : "flex-row-reverse"}`}
     >
       <div className="relative w-[800px] h-fit rounded-2xl shadow-xl">
         <img
@@ -48,7 +48,7 @@ const ProjectPanel = ({
 
         <span className="text-center">{description}</span>
 
-        <div className="flex gap-5">
+        <div className="flex justify-center flex-wrap gap-5">
           {technologies.map((tech, index) => (
             <h3
               key={index}
