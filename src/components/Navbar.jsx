@@ -1,15 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { navItems } from "../data/index";
 
 const Navbar = () => {
-  const navItems = [
-    { name: "HOME", path: "/" },
-    { name: "PROJECTS", path: "/projects" },
-    { name: "SKILLS", path: "/skills" },
-    { name: "CONTACT", path: "/contact" }
-  ];
-
   return (
-    <div className="flex justify-center items-center gap-10 w-full font-semibold text-xl text-navbarText h-20">
+    <div className="hidden md:flex justify-center items-center gap-10 w-full font-semibold text-xl text-navbarText min-h-20">
       {navItems.map((item, index) => (
         <NavLink
           key={index}
