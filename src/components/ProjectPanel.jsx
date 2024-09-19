@@ -25,9 +25,9 @@ const ProjectPanel = ({
         damping: 8,
         duration: 0.5,
       }}
-      className={`flex justify-center items-center gap-10 ${photoSide === "left" ? "" : "flex-row-reverse"}`}
+      className={`flex justify-center items-center gap-10 flex-col-reverse xl:flex-row ${photoSide === "left" ? "" : "xl:flex-row-reverse"}`}
     >
-      <div className="relative w-[800px] h-fit rounded-2xl shadow-xl">
+      <div className="relative w-80 xl:w-[800px] h-fit rounded-2xl shadow-xl">
         <img
           className="w-full h-full rounded-2xl transition-opacity duration-300 opacity-100 hover:opacity-0"
           src={photo}
@@ -46,7 +46,7 @@ const ProjectPanel = ({
           <img className="w-10" src={icon} alt="Project Icon" />
         </div>
 
-        <span className="text-center">{description}</span>
+        <span className="text-center px-5 xl:px-0">{description}</span>
 
         <div className="flex justify-center flex-wrap gap-5">
           {technologies.map((tech, index) => (
