@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center flex-grow gap-10 flex-col xl:flex-row">
+    <div className="flex justify-center items-center flex-grow gap-10 flex-col xl:flex-row px-5 xl:px-0">
       <motion.div
         className="text-black w-full xl:w-1/2 flex flex-col text-left justify-center items-center gap-2"
         variants={containerVariants}
@@ -34,7 +34,7 @@ const Home = () => {
           Hello I am
         </motion.h2>
 
-        <motion.div className="w-full flex flex-col text-left gap-10">
+        <motion.div className="w-full flex flex-col text-left gap-5 xl:gap-10">
           <motion.h2
             className="w-full text-pink font-extrabold tracking-tighter text-3xl xl:text-8xl"
             variants={childVariants}
@@ -54,8 +54,7 @@ const Home = () => {
           variants={childVariants}
         >
           I am a computer science student at the Technical University of Lodz. I
-          really enjoy acquiring knowledge. I am passionate about computer
-          science.
+          really enjoy acquiring knowledge and I am ready for new challenges.
         </motion.h2>
 
         <motion.div
