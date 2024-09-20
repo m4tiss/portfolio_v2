@@ -61,17 +61,17 @@ const ProjectPanel = ({
 
         <div className="flex gap-10">
           {isCode && (
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex justify-center items-center">
+              <a href={hrefCode} target="_blank" rel="noopener noreferrer" className="flex justify-center items-center gap-2">
               <span>Code</span>
-              <a href={hrefCode} target="_blank" rel="noopener noreferrer">
                 <FaGithub size={40} />
               </a>
             </div>
           )}
           {isWebsite && (
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex justify-center items-center">
+              <a href={hrefWebsite} target="_blank" rel="noopener noreferrer" className="flex justify-center items-center gap-2">
               <span>Website</span>
-              <a href={hrefWebsite} target="_blank" rel="noopener noreferrer">
                 <GoProjectSymlink size={40} />
               </a>
             </div>

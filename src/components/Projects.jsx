@@ -35,9 +35,8 @@ const Projects = () => {
         title="Ros-błysk"
         description="A website created for the cleaning company Ros-Błysk. It allows users to view the company's offers, gallery, and contact information. The site is bilingual."
         technologies={["React", "Tailwind"]}
-        isCode={true}
+        isCode={false}
         isWebsite={true}
-        hrefCode="https://github.com/rosblysk"
         hrefWebsite="https://xn--rosbysk-qjb.pl/"
         photoSide="left"
       />
