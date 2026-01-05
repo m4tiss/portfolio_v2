@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center flex-grow gap-10 flex-col xl:flex-row px-5 xl:px-0">
+    <div className="flex justify-center items-center flex-1 gap-10 flex-col xl:flex-row px-5 xl:px-0">
       <motion.div
         className="text-black w-full xl:w-1/2 flex flex-col text-left justify-center items-center gap-2"
         variants={containerVariants}
