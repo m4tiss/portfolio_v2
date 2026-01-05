@@ -30,20 +30,30 @@ const Skills = () => {
 
       <motion.div className="h-full flex flex-col items-center justify-center relative px-4">
         <motion.h1
-        
+          key={selectedSkill?.title}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0.4 }}
+          transition={{
+            duration: 1.5,
+            ease: "easeInOut",
+          }}
           className={`absolute text-[80px] md:text-[120px] lg:text-[200px] 
       opacity-40 font-semibold select-none pointer-events-none text-center
       ${selectedSkill?.color?.text}`}
-          style={{
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
         >
           {selectedSkill.title}
         </motion.h1>
 
-        <motion.h2 className="relative z-10 text-center text-lg sm:text-xl md:text-2xl max-w-3xl spacing">
+        <motion.h2
+          key={selectedSkill?.description}
+          initial={{ opacity: 0.4 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.5,
+            ease: "easeInOut",
+          }}
+          className="relative z-10 text-center text-lg sm:text-xl md:text-2xl max-w-3xl spacing"
+        >
           {selectedSkill.description}
         </motion.h2>
       </motion.div>
