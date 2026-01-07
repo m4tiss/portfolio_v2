@@ -1,5 +1,5 @@
-import { FaReact, FaGithub, FaNodeJs, FaJava } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { FaReact, FaGithub, FaNodeJs, FaJava, FaDatabase } from "react-icons/fa";
+import { VscCoverage } from "react-icons/vsc";
 
 export const technicalSkills = [
   {
@@ -13,17 +13,6 @@ Icon: FaReact,
     },
   },
   {
-    title: "Tailwind",
-        description: `TailwindCSS to framework CSS, który pozwala tworzyć w pełni responsywne i nowoczesne style w aplikacjach webowych. Dzięki jego klasom użytkownik może szybko prototypować interfejsy i utrzymać spójny design. Tworzę elastyczne komponenty UI, które łatwo dostosować do różnych ekranów i urządzeń. Stosuję Tailwind wraz z React, aby budować interaktywne i estetyczne aplikacje. Regularnie wykorzystuję funkcje takie jak dark mode, flexbox i grid, aby tworzyć wydajne i eleganckie layouty.`,
-
-    Icon: RiTailwindCssFill,
-    color: {
-      border: "border-sky-300",
-      shadow: "shadow-sky-300",
-      text: "text-sky-300",
-    },
-  },
-  {
     title: "Github",
         description: `GitHub to platforma do zarządzania kodem źródłowym i współpracy w zespołach programistycznych. Regularnie korzystam z GitHub do tworzenia branchy, pull requestów i zarządzania workflow CI/CD. Dzięki temu mogę łatwo integrować zmiany zespołu i śledzić historię projektu. Posiadam doświadczenie w pracy z repozytoriami publicznymi i prywatnymi, dbając o porządek w commitach i dokumentacji. Używam GitHub także do publikowania projektów i współdzielenia ich z innymi programistami.`,
 
@@ -34,18 +23,7 @@ Icon: FaReact,
       text: "text-gray-800",
     },
   },
-  {
-    title: "NodeJS",
-        description: `NodeJS to środowisko JavaScript pozwalające tworzyć backend aplikacji webowych. Posiadam doświadczenie w budowaniu serwerów, API i obsłudze baz danych w NodeJS. Tworzę aplikacje, które efektywnie zarządzają danymi i zapewniają szybką komunikację między frontendem a backendem. Wykorzystuję popularne biblioteki i frameworki NodeJS, takie jak Express, do tworzenia skalowalnych aplikacji. Dbam także o bezpieczeństwo aplikacji, obsługując uwierzytelnianie, autoryzację i walidację danych.`,
-
-    Icon: FaNodeJs,
-    color: {
-      border: "border-green-600",
-      shadow: "shadow-green-600",
-      text: "text-green-600",
-    },
-  },
-  {
+    {
     title: "Java",
         description: `Java to język programowania używany do tworzenia aplikacji desktopowych, serwerowych i mobilnych. Posiadam doświadczenie w pisaniu aplikacji zgodnie z najlepszymi wzorcami projektowymi i zasadami SOLID. Tworzę wydajne programy, które łatwo utrzymać i rozbudowywać. Korzystam z Javy do integracji z bazami danych i tworzenia logiki biznesowej aplikacji. Regularnie testuję i optymalizuję kod, aby zapewnić jego stabilność i wysoką jakość.`,
 
@@ -54,6 +32,28 @@ Icon: FaReact,
       border: "border-red-600",
       shadow: "shadow-red-600",
       text: "text-red-600",
+    },
+  },
+   {
+    title: "Testing",
+        description: `NodeJS to środowisko JavaScript pozwalające tworzyć backend aplikacji webowych. Posiadam doświadczenie w budowaniu serwerów, API i obsłudze baz danych w NodeJS. Tworzę aplikacje, które efektywnie zarządzają danymi i zapewniają szybką komunikację między frontendem a backendem. Wykorzystuję popularne biblioteki i frameworki NodeJS, takie jak Express, do tworzenia skalowalnych aplikacji. Dbam także o bezpieczeństwo aplikacji, obsługując uwierzytelnianie, autoryzację i walidację danych.`,
+
+    Icon: VscCoverage,
+    color: {
+      border: "border-green-600",
+      shadow: "shadow-green-600",
+      text: "text-green-600",
+    },
+  },
+   {
+    title: "DB",
+        description: `NodeJS to środowisko JavaScript pozwalające tworzyć backend aplikacji webowych. Posiadam doświadczenie w budowaniu serwerów, API i obsłudze baz danych w NodeJS. Tworzę aplikacje, które efektywnie zarządzają danymi i zapewniają szybką komunikację między frontendem a backendem. Wykorzystuję popularne biblioteki i frameworki NodeJS, takie jak Express, do tworzenia skalowalnych aplikacji. Dbam także o bezpieczeństwo aplikacji, obsługując uwierzytelnianie, autoryzację i walidację danych.`,
+
+    Icon: FaDatabase,
+    color: {
+      border: "border-yellow-600",
+      shadow: "shadow-yellow-600",
+      text: "text-yellow-600",
     },
   },
   

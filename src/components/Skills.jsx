@@ -3,12 +3,18 @@ import TechnicalSkillPanel from "./TechnicalSkillPanel";
 import { motion } from "framer-motion";
 import { technicalSkills } from "../data/skills";
 
-const Skills = () => {
-  const [selectedSkill, setSelectedSkill] = useState(technicalSkills[0]);
 
+const getRandomSkill = (skills) => {
+  const randomIndex = Math.floor(Math.random() * skills.length);
+  return skills[randomIndex];
+};
+
+const Skills = () => {
+  const [selectedSkill, setSelectedSkill] = useState(getRandomSkill(technicalSkills));
+  
   return (
-    <div className="flex w-full flex-col py-10 xl:py-0 justify-center items-center flex-1 relative">
-      <div className="md:absolute md:left-5 md:top-1/4 md:flex-col flex justify-center items-center flex-wrap gap-4 mb-5 md:mb-0">
+    <div className="flex w-full flex-col py-10 xl:py-0 justify-start xl:justify-center items-center flex-1 relative">
+      <div className="xl:absolute xl:left-5 xl:top-1/4 xl:flex-col flex justify-center items-center flex-wrap gap-4 mb-5 xl:mb-0">
         {technicalSkills.map((skill, index) => (
           <motion.div
             key={skill.title}
