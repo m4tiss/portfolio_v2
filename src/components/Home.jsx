@@ -53,8 +53,8 @@ const Home = () => {
           className="w-full font-extrabold tracking-tighter text-xl"
           variants={childVariants}
         >
-          I am a computer science student at the Technical University of Lodz. I
-          really enjoy acquiring knowledge and I am ready for new challenges.
+          I am a Full Stack Developer with a background in computer science at the Technical University of Łódź.
+          I enjoy learning new technologies and am always eager to take on new challenges.
         </motion.h2>
 
         <motion.div
