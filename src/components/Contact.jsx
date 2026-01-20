@@ -27,7 +27,7 @@ const Contact = () => {
     },
   };
   return (
-    <div className="w-full flex flex-col  xl:flex-row items-center flex-grow gap-20 justify-center py-10 xl:py-0">
+    <div className="w-full flex flex-col xl:flex-row items-center flex-grow gap-20 justify-center py-10 xl:py-0">
       <motion.div
         initial="hidden"
         animate="visible"
