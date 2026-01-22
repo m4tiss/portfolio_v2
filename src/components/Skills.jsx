@@ -1,93 +1,69 @@
-import { useState } from "react";
-import TechnicalSkillPanel from "./TechnicalSkillPanel";
-import { motion } from "framer-motion";
-import { technicalSkills } from "../data/skills";
-
-
-const getRandomSkill = (skills) => {
-  const randomIndex = Math.floor(Math.random() * skills.length);
-  return skills[randomIndex];
-};
+import { useState, startTransition, Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { MapControls } from "@react-three/drei";
+import skills from "../data/skills";
+import SkillCube from "./SkillCube";
 
 const Skills = () => {
-  const [selectedSkill, setSelectedSkill] = useState(getRandomSkill(technicalSkills));
-  
+  const [selectedSkill, setSelectedSkill] = useState(skills[0]);
+
+  const defaultColor = "#ffffff";
+  const gap = 0.05;
+
+  const emptyPNG =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgD4u+6QAAAAASUVORK5CYII=";
+
+  const cubes = [];
+  for (let x = 0; x < 3; x++) {
+    for (let y = 0; y < 3; y++) {
+      for (let z = 0; z < 3; z++) {
+        const block = skills.find(
+          (b) => b.pos[0] === x && b.pos[1] === y && b.pos[2] === z,
+        );
+
+        cubes.push(
+          <SkillCube
+            key={`${x}-${y}-${z}`}
+            position={[
+              (x - 1) * (1 + gap),
+              (y - 1) * (1 + gap),
+              (z - 1) * (1 + gap),
+            ]}
+            color={block ? block.color : defaultColor}
+            icon={block ? block.icon : emptyPNG}
+            onClick={() =>
+              block &&
+              startTransition(() => {
+                setSelectedSkill(block);
+              })
+            }
+          />,
+        );
+      }
+    }
+  }
+
   return (
-    <div className="flex w-full flex-col py-10 xl:py-0 justify-start xl:justify-center items-center flex-1 relative">
-      <div className="xl:absolute xl:left-5 xl:top-1/4 xl:flex-col flex justify-center items-center flex-wrap gap-4 mb-5 xl:mb-0">
-        {technicalSkills.map((skill, index) => (
-          <motion.div
-            key={skill.title}
-            initial={{ x: -200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 10,
-              delay: index * 0.2,
-            }}
-            onClick={() => setSelectedSkill(skill)}
-            className="cursor-pointer"
-          >
-            <TechnicalSkillPanel color={skill.color} Icon={skill.Icon} />
-          </motion.div>
-        ))}
+    <div className="w-full relative h-screen flex flex-col items-center justify-start">
+      <div className="flex flex-col absolute top-5 items-center w-80">
+        <h1
+          style={{ color: selectedSkill?.color || "#000000" }}
+          className="text-3xl font-bold"
+        >
+          {selectedSkill?.label || "REACT"}
+        </h1>
+        <p className="text-black text-center">{selectedSkill?.description}</p>
       </div>
-
-      <motion.div className="h-full flex flex-col items-center justify-center relative px-4">
-        <motion.h1
-          key={selectedSkill?.title}
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 0.4 }}
-          transition={{
-            duration: 1.5,
-            ease: "easeInOut",
-          }}
-          className={`absolute text-[80px] md:text-[120px] lg:text-[200px] 
-      opacity-40 font-semibold select-none pointer-events-none text-center
-      ${selectedSkill?.color?.text}`}
-        >
-          {selectedSkill.title}
-        </motion.h1>
-
-        <motion.h2
-          key={selectedSkill?.description}
-          initial={{ opacity: 0.4 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 1.5,
-            ease: "easeInOut",
-          }}
-          className="relative z-10 text-center text-lg sm:text-xl md:text-2xl max-w-3xl spacing"
-        >
-          {selectedSkill.description}
-        </motion.h2>
-      </motion.div>
-
-      <motion.div
-        key={selectedSkill.title}
-        className={`
-    ${selectedSkill.color.text}
-    text-[200px]
-    sm:text-[260px]
-    md:text-[360px]
-    lg:text-[500px]
-  `}
-        initial={{ scale: 0, opacity: 0, rotateX: 0, rotateY: 0, rotateZ: 0 }}
-        animate={{
-          scale: [0, 0.5, 1],
-          opacity: [0, 0.5, 1],
-          rotateX: [0, 50, 50],
-          rotateY: [0, 0, 0],
-          rotateZ: [0, 360, 40],
-        }}
-        transition={{
-          duration: 1.5,
-          ease: "easeInOut",
-        }}
-      >
-        <selectedSkill.Icon />
-      </motion.div>
+      <div className="w-full h-full">
+        <Suspense fallback={null}>
+          <Canvas camera={{ position: [-4, 3, 6], fov: 60 }}>
+            <ambientLight intensity={2} />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
+            {cubes}
+            <MapControls enableRotate enableZoom={false} enablePan={false} />
+          </Canvas>
+        </Suspense>
+      </div>
     </div>
   );
 };
