@@ -56,7 +56,7 @@ const Skills = () => {
       </div>
       <div className="w-full h-full">
         <Suspense fallback={null}>
-          <Canvas camera={{ position: [-4, 3, 6], fov: 60 }}>
+          <Canvas camera={{ position: [-4, 3, 6], fov: 65 }}>
             <ambientLight intensity={2} />
             <directionalLight position={[10, 10, 10]} intensity={1} />
             {cubes}
